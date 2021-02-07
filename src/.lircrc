@@ -1,0 +1,26 @@
+#terminal runs irexec command when you press button 1 /home/pi/IRtest1 will be executed
+begin
+    prog = irexec
+    button = KEY_VOLUMEUP
+    config = echo "Volume-Up"
+end
+begin
+    prog = irexec
+    button = KEY_VOLUMEDOWN
+    config = echo "Volume-Down"
+end
+begin   
+    prog = irexec
+    button = KEY_1
+    config = sudo python /home/pi/projects/baby-monitor/src/IRtest1.py
+end
+begin  
+    prog = irexec
+    button = KEY_2
+    config = sudo python /home/pi/projects/baby-monitor/src/IRtest2.py
+end
+begin 
+    prog = irexec
+    button = KEY_3
+    config = sudo python /home/pi/projects/baby-monitor/src/IRtest3.py
+end
