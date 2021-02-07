@@ -1,14 +1,14 @@
-# baby-monitor
+# Baby-monitor
 Raspberry pi driven baby monitor
 
-# Setup
+## Setup
 In this project we use VS1838B IR receiver for remote control and first we need the LIRC package in order to decode infrared signals
-+ Install LIRC
+### Install LIRC
 ```
 sudo apt-get install lirc liblircclient-dev
 ```
 
-+ Set LIRC
+### Set LIRC
 ~~Run the following command to edit /etc/modules~~
 ~~sudo  nano /etc/modules~~
 
@@ -37,7 +37,9 @@ driver = default
 device = /dev/lirc0
 ```
 
-reboot
+**reboot**
+
+### Check if everything works
 
 After login you should have a lirc0 device:
 ```
@@ -58,5 +60,6 @@ $ irw
 0000000000006422 00 KEY_VOLUMEDOWN Sony_RMT-CS33AD
 ```
 
-Last step is to give these events actions, e.g. start a program. For this we use the program irexec. This needs its config file ~/.lircrc
-Copy it from the src folder
+Last step is to give these events actions, e.g. start a program. For this we use the program irexec.
+This needs its config file ~/.lircrc
+Create a new one or copy the `.lircrc` file from the src folder
